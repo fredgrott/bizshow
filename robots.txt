@@ -1,0 +1,4 @@
+# Change this to allow search engines
+User-agent: *
+Disallow: /
+# SiteMap: http://yoursite.com/sitemap.xml

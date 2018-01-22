@@ -1,0 +1,110 @@
+/* BizShow
+   Fred Grott
+   0.0.1
+
+   0 iphone-x notch adjustment
+
+*/
+
+/* 0 iphone-x notch adjustment */
+@supports(padding: max(0px)){
+   body{
+     padding: env(safe-area-insert-top) env(safe-area-insert-right) env(safe-area-insert-left) env(safe-insert-bottom);
+   }
+
+}
+
+.bizshow-docs-navbar{
+  background-color: #263238;
+}
+
+
+/* 2 stickyfill polyfill css settings */
+/* sets the sticky without supports clause as we are using the stickyfill polyfill */
+@media (min-width: 768px) {
+
+      .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1071; }
+}
+/* additional class besiddes sticky on the toc doc sidebar to
+   further adjust sticky css settings on desktop */
+@media (min-width: 768px) {
+  .doc-sidebar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: auto;
+    z-index: 1071;
+  }
+
+}
+.sticky {
+
+    top: 0;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+/*  3 TOC Styling, note not using tocbot fixed positioning as
+      want it to be fixed in MSIE browsers too hence using the stickyfill polyfill */
+.toc-title{
+  font-family: "Roboto Condensed",serif;
+  font-weight: bold;
+  color: #455a64;
+}
+/* viewers need a visual cue that its a toc, one of those is using a
+   different font than the content text and the titles, headers, etc*/
+.our-toc{
+  font-family: "Roboto Condensed", serif;
+  color: #455a64;
+}
+/* list style adjustment to deviate from BS defaults*/
+nav ul.toc-list{
+  list-style: none;
+}
+/* Font wise usually we are using a font that has 900 heavy
+   font weights in our main text hence the change to font
+   weight of 900 */
+.is-active-link{
+  color: #263238;
+  font-weight: 900;
+  font-style:oblique;
+
+}
+/* this has to be before the is-actielink::before block
+   design-wise I tend to set it the same color as the body
+   background color so one has just an active link left
+   side highlight*/
+.toc-link::before{
+  background-color:#fff;
+}
+/* left-side active highlight color
+
+   note, as since a different fixed way is used via the
+   stickyfill polyfill one has to limit the height
+   of this indicator, hence the height setting.
+*/
+.is-active-link::before{
+  background-color:#263238;
+  height: 1.25rem;
+}
+.toc-link{
+  color: #607d8b;
+
+}
+/* in docs we tend not to follow the parent heading rule all that well so this a
+   hack adjustment for the margins when that happens. you might have to increase the elements and
+   specificity depending how deep your doc headers are
+
+   somee time later I will figure out the non-hackis way and submit it to the tocbot project.
+
+   */
+.toc-list .toc-list .toc-list {
+  padding-left: 0px;
+}

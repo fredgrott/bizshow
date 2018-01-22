@@ -1,0 +1,345 @@
+<!-- BziShow
+     Fred Grott
+     version 0.0.1
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+     <meta name="description" content="BizShow Business  Template">
+     <meta name="author" content="Fred Grott">
+<meta name="robots" content="noindex, nofollow">
+     <title>Docs</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- create a 512x512 favicon image and than use realfavicongenerator.net to generate these-->
+     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+     <link rel="manifest" href="manifest.json">
+     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+     <meta name="theme-color" content="#ffffff">
+     <!-- order is:
+                  1. fonts
+                  2. BSM
+                  3. 3rd party plugin css files
+                  4. site css style file
+     -->
+     <link href="assets/css/fonts.css"  rel="stylesheet"  >
+     <link href="assets/css/material-icons.css" rel="stylesheet" >
+     <link href="assets/css/font-awesome.css" rel="stylesheet">
+     <link href="assets/css/core/bootstrap-material-design.css" rel="stylesheet">
+     <!-- doc template specific -->
+     <link href="assets/css/vendors/tocbot/tocbot.css" rel="stylesheet">
+     <link href="assets/css/vendors/jstree/default/style.css" rel="stylesheet">
+     <link href="assets/css/docs.css" rel="stylesheet">
+
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bizshow-docs-navbar sticky">
+     <a class="navbar-brand mr-0 mr-md-2" href="index.html" aria-label="BizShow">
+        <h2>BizShow </h2>
+      </a>
+
+    </header><!-- ./navvbar -->
+    <div class="container-fluid"><!-- container -->
+      <div class="row flex-xl-nowrap"><!-- row -->
+        <div class="col-md-3 col-xl-2 d-none d-md-block " id="fixed-sidebar"><!-- fixed-sdebar -->
+          <div class="sticky doc-sidebar">
+           <!-- imperfect hack to deal with stickyfill polyfill quirks-->
+           <br/>
+           <br/>
+           <br/>
+           <br/>
+          <!-- using display properties to creative hide and show hero stuff-->
+
+           <h4 class="toc-title">Table of Contents</h4>
+             <nav id="toc"   class=" our-toc "></nav>
+             <br/>
+             <br/>
+          </div>
+        </div><!-- ./fixed-sidebar -->
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 " >
+          <!-- We want desktop and mobile similar, so we hide this on mobile
+               and display similar toc heading instead on mobile-->
+          <div class="hero-content  ">
+            <h1 class="hero-title mx-auto text-center ">BizShow Docs</h1>
+
+          </div>
+          <br/>
+          <br/>
+          <div class="bizshow-docs-content">
+
+            <section class="bizshow-setup">
+                  <h2 class="section-title" id="bizshow-setup">SetUp</h2>
+                  <p>Bizshow is self-contained so that you can quickly prototype a one-page html document of an api or app. The fonts, js, and css files are in the assets sub-folder. The prism componenets that define code highlighting formating per language are in the components sub-folder. The same exact demo is the same exact layout so you can hit-the-ground running and create that one page web doucment in minutes following this demo example.</p>
+                  <div id="bizshow-files">
+                    <ul class="list-unstyled">
+                    <li data-jstree='{ "selected" : false, "opened" : true }'>In Layouts
+                     <ul class="list-unstyled">
+                        <li>layout-one.html</li>
+                        <li>favicons and favicon configs</li>
+                        <li data-jstree='{ "selected" : false, "opened" : true }'>assets
+                           <ul class="list-unstyled">
+                             <li>css</li>
+                             <li>fonts</li>
+                             <li>images</li>
+                             <li>js</li>
+                           </ul>
+                        </li>
+                      </ul>
+                   </li>
+                </ul>
+              </div>
+              <br/>
+            <p>Each layout file has its own layout-name-init.js and layout-name-style.css file.</p>
+             <p>CDN urls of the components are listed in the last section so that you can fine tune according to your bandwidth performance requirements.</p>
+
+            </section>
+            <section class="bizshow-banner">
+              <h2 class="section-title" id="bizshow-header">Bizshow Banner</h2>
+              <p>The BizShow banner contains a parallax background:</p>
+              <p>CSS</p>
+              <pre><code>
+                .hero-banner-image{
+                  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.49), rgba(69, 90, 100, 0.69)), url("../images/index/black-and-white-city-man-people.jpg");
+                  background-size: cover;
+                  background-attachment: fixed;
+                  background-position: center;
+                  min-height: 24rem;
+                  perspective: 1px;
+                  transform-style: preserve-3d;
+                  scroll-behavior: smooth;
+                }
+              </code></pre>
+              <p>To change the image you just change what is in the double-quotes in the url sub-block. Now on to the animated transitions.</p>
+              <h3 id="bizshow-banner-tranitions">Banner Transitions</h3>
+              <p>I use a combination of bounceJS, animateCSS, lettering, and textillate plugins so that there is less code to write both in CSS and JS. Side Note: There is an online version of BounceJS:</p>
+              <a href="http://bouncejs.com">BounceJsONline</a>
+              <p>You will use that to generate the CSS keyframes if you do not like using javascript to do it. The javascript I used in layout-one is:</p>
+              <p>Javascript</p>
+              <pre><code>
+                var bounce = new Bounce();
+                bounce
+                  .translate({
+                    from: { x: 0, y: 170 },
+                    to: { x: 0, y: 0 },
+                    duration: 12600,
+                    stiffness: 4
+                  })
+                  .scale({
+                    from: { x: 1, y: 1 },
+                    to: { x: 0.1, y: 2.3 },
+                    easing: "sway",
+                    duration: 19800,
+                    delay: 65,
+                    stiffness: 2
+                  })
+                  .scale({
+                    from: { x: 1, y: 1},
+                    to: { x: 5, y: 1 },
+                    easing: "sway",
+                    duration: 19300,
+                    delay: 30,
+                  })
+                 .applyTo(document.querySelectorAll(".hero-phrase"));
+              </code></pre>
+              <p>Basically, I create an empty var called bounce that is set equal to a new Bounce instance than I define the animation settings. And the last step is to set it to trigger on an html element via the apply-to statement.</p>
+              <p>There is a transitions tutorial being developed as an upcoming update that will step you through DIY-wise in coming up with your own transitions and even using javascript callbacks to tie-them togehter in more complex and cool transitions stuff. Your product questions helpe me zero in on what levels I need to cover, so please ask qu3estions about what you do not understand about the transitions setup.</p>
+              <p>The next banner transition is the texillate one which uses both animateCSS and lettering as dependencies. Let me step you through the one applied to the layout-one hero-title:</p>
+              <p>Javascript</p>
+              <pre><code>
+                $('.hero-title').textillate({
+                  type: 'word',
+                  in: {
+
+
+
+
+                    // set the delay between each character
+                    delay: 1250,
+
+                    // set to true to animate all the characters at the same time
+                    sync: false,
+
+                    // randomize the character sequence
+                    // (note that shuffle doesn't make sense with sync = true)
+                    shuffle: false,
+
+
+                  },
+
+
+                });
+              </code></pre>
+              <p>We are telling textillate to use lettering in the word mode and than for the in-effects we are setting the delay, sync, and shuffle.</p>
+              <p>In our HTML on the hero-title ellement we have:</p>
+              <p>HTML</p>
+              <pre><code>
+                data-in-effect="bounceInLeft"
+              </code></pre>
+              <p>The last bit is the color transition which is completed in CSS:</p>
+              <p>CSS</p>
+              <pre><code>
+                @keyframes toBlueGrey {
+                  0% {
+                    color: #e8eaf6;
+                  }
+                  60% {
+                    color: #c5cae9;
+                  }
+                  100% {
+                    color: #9fa8da;
+                  }
+                }
+                @keyframes toGrey{
+                  0% {
+                    color: #e3f2fd;
+                    font-size: 1.25rem;
+                  }
+                  60% {
+                    color: #bbdefb;
+                    font-size: 1.5rem;
+                  }
+                  100%{
+                    color: #90caf9;
+                    font-size: 2.25rem;
+                  }
+                }
+                h1.hero-title span.word1{
+                    animation-name: toBlueGrey;
+                    animation-duration: 18s;
+                    animation-fill-mode: forwards;
+
+                }
+                h1.hero-title span.word2{
+                  animation-name: toGrey;
+                  animation-duration: 18s;
+                  animation-fill-mode: forwards;
+                  margin-left: -0.55rem;
+                }
+
+
+              </code></pre>
+              <p>Some notes about this CSS code. In my htnl h1 title I kept the words sperate as I wanted to be able to use lettering's generated spans to color the title. So I use a negative margin left to adjust for that quirk.</p>
+              <p>Although its set to the hero-title element the animation will not complete until the textiallate js animation has executed first. That is one of the reasons I am completing a transitions tutorial using AOS, bounceJS, lettering, animateCSS, and textillate as I want you to have the power to change in what sequence things get executed as opens the doors to more powerfull attention grabbing tranitions.</p>
+              <p>Now onward to the AOS transtions</p>
+
+
+
+            </section>
+            <section class="aos-transitions">
+              <h2 class="section-title" id="aos-transitions">AOS Transitions</h2>
+              <p>Velocity JS generally is somewhat hard to understand as far as doing transitions. So the AOS plugin is used instead as it makes it a breaze to do transitions. Let me show how eas it is. First lets initialaize the AOS plugin:</p>
+              <p>Javascrrript</p>
+              <pre><code>
+                AOS.init();
+              </code></pre>
+              <p>Every AOS powered transition is detailed via data attributes, for examplee the promo block has:</p>
+              <p>HTML</p>
+              <pre><code>
+               data-aos="flip-left" data-aos-delay="100" data-aos-anchor=".brand"
+              </code></pre>
+              <p>The anchor happens to be the card extra class of brand, data-aos specifices the animation to be used and the data-aos-delay sets the delay. By setting up on each individual promo card it will be correctly triggred via a user scroll both on the desktop and mobile.</p>
+            </section>
+            <section class="cdn-urls">
+              <h2 class="section-title" id="cdns">CDN Urls</h2>
+              <p>You can fine tune the speed and bandwidth your site uses by using some CDNs to deliver the plugins and fonts used by the BizShow layouts. Let's start with the fonts. First when using Google's CDN for fonts do not just insert the new css imports in the html head as you still need to delete the fonts.css import as it points to the local copy of the font files.</p>
+              <p>Okay, the icon fonts first andd rember to remove the local font-awesome and material-icons css imports after you insert these two new css imports into the html head of the layout variant you aare using:</p>
+              <p>HTML, css import</p>
+              <pre><code>
+                 &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+                 &lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
+              </code></pre>
+              <p>and the google roboto font css imports are:</p>
+              <p>HTML, css import</p>
+              <pre><code>
+                &lt;link href="https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"&gt;
+                 &lt;link href="https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet"&gt;
+                 &lt;link href="https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet"&gt;
+                 &lt;link href="https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet"&gt;
+              </code></pre>
+              <p>Next up is the Bootstrap Material Design CDN imports</p>
+              <h3 id="bsm">Bootstrap</h3>
+              <p>I use a Material Design fork of Bootstrap called Bootstrap Material Design, and the cdn urls for it are:</p>
+              <p>HTML, css import</p>
+              <pre><code>
+                &lt;link rel="stylesheet" href="https:&#x2F;&#x2F;unpkg.com&#x2F;bootstrap-material-design@4.0.0-beta.3&#x2F;dist&#x2F;css&#x2F;bootstrap-material-design.min.css" integrity="sha384-k5bjxeyx3S5yJJNRD1eKUMdgxuvfisWKku5dwHQq9Q/Lz6H8CyL89KF52ICpX4cL" crossorigin="anonymous"&gt;
+              </code></pre>
+              <p>And than the js import for BSM from a CDN is(you put this right before the end body tag and follow the comment amount order as I list the order all the js has to be imported in for it to properly work.) and put JQuery first like I did:</p>
+              <p>HTML, js import</p>
+              <pre><code>
+                &lt;script src="https:&#x2F;&#x2F;code.jquery.com&#x2F;jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"&gt;&lt;/script&gt;
+                &lt;script src="https:&#x2F;&#x2F;unpkg.com&#x2F;popper.js@1.12.5&#x2F;dist&#x2F;umd&#x2F;popper.js" integrity="sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw" crossorigin="anonymous"&gt;&lt;/script&gt;
+                &lt;script src="https:&#x2F;&#x2F;unpkg.com&#x2F;bootstrap-material-design@4.0.0-beta.4&#x2F;dist&#x2F;js&#x2F;bootstrap-material-design.js" integrity="sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA" crossorigin="anonymous"&gt;&lt;/script&gt;
+              </code></pre>
+              <p>The bootstrap tether plugin import goes before the bootstrap core one:</p>
+              <p>HTML, js import</p>
+              <pre><code>
+                &lt;script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
+              </code></pre>
+              <p>The snackbar is not on a CDN as of yet so it will still be a local import. Now we move on to the 3rd parrty plugins.</p>
+              <h3 id="thirdparty">3rdParty</h3>
+              <p>Since the animateCSS is the easiest let's do that one first. Its an css import in the html  head block of:</p>
+              <p>HTML, css import</p>
+              <pre><code>
+                &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"&gt;
+              </code></pre>
+              <p>AOS, bouncejs, lettering, and teextillate still will be a local imports as they are not on a CDN currently.</p>
+              <p>Last, but not least in the last section you will find links to 3rdparty docs to the framework and plugins used.</p>
+
+
+
+            </section>
+            <section class="otherdocs">
+              <h2 class="section-title" id="other-docs">Other Docs</h2>
+              <p>The following is a list of all the 3rd party docs on the framework and plugins used:</p>
+              <ul class="list-unstyled">
+                <li><a href="https://fezvrasta.github.io/bootstrap-material-design/" target="_blank">Bootstrap Material Design</li>
+                <li><a href="http://www.jquery.com/" target="_blank">JQuery</li>
+                <li><a href="https://github.com/daneden/animate.css" target="_blank">AnimateCSS<li>
+                <li><a href="http://michalsnik.github.io/aos/" target="_blank">AOS</li>
+                <li><a href="https://github.com/tictail/bounce.js" target="_blank">BounceJS</li>
+                <li><a href="http://github.com/davatron5000/Lettering.js" target="_blank">Lettering</li>
+                <li><a href="http://textillate.js.org" target="_blank">Textillate<li>
+              </ul>
+            </section>
+          </div>
+        </main>
+
+      </div><!-- ./row -->
+      <div class="row flex-xl-nowrap">
+          <footer class="bd-footer text-muted mx-auto text-center">
+                 <div class=" p-3 p-md-5">
+
+       <p>&copy;2018 all rights reserved. Designed and built by <a href="https://twitter.com/fredgrott" target="_blank" >@fredgrott</a>.</p>
+
+     </div>
+   </footer>
+         </div>
+
+    </div><!-- ./container -->
+
+
+
+    <!-- js goes here to make page load faster, order is:
+
+                   1. jquery
+                   2. BSM deps and BS deps, popper snackbarjs and tether
+                   3. BSM
+                   4. viewport bug js
+                   5. 3rd party jqueery plugins
+                   6  init js file
+        -->
+      <script src="assets/js/core/jquery-3.2.1.js"></script>
+      <script src="assets/js/core/popper.min.js"></script>
+      <script src="assets/js/core/snackbar.min.js"></script>
+      <script src="assets/js/core/tether.min.js"></script>
+      <script src="assets/js/core/bootstrap-material-design.js"></script>
+      <!-- BSM docs example shows this BS dep workaround coming after the bs js import -->
+      <script src="assets/js/core/ie10-viewport-bug-workaround.js"></script>
+      <script src="assets/js/vendors/stickyfill/stickyfill.js"></script>
+      <script src="assets/js/vendors/jstree/jstree.js"></script>
+      <script src="assets/js/vendors/tocbot/tocbot.js"></script>
+      <script src="assets/js/docs.js"></script>
+  </body>
+</html>

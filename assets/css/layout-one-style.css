@@ -1,0 +1,309 @@
+/*
+   BizShow
+   Fred Grott
+   0.0.1
+
+   0 iphone-x notch adjustment
+   1 font assignments
+   2 hero-banner
+   3 main
+   4
+   5 footer
+
+*/
+/* 0 iphone-x notch adjustment */
+@supports(padding: max(0px)){
+   body{
+     padding: env(safe-area-insert-top) env(safe-area-insert-right) env(safe-area-insert-left) env(safe-insert-bottom);
+   }
+}
+/* 1 font assignments */
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.hero-title{
+  font-family: 'Roboto Slab',serif;
+  font-weight: 900;
+}
+.hero-phrase{
+  font-family: "Roboto Condensed",serif;
+  font-weight: 500;
+}
+.promo-title{
+  font-family: 'Roboto Slab',serif;
+  font-weight: 500;
+}
+
+.section-title{
+  font-family: 'Roboto Slab', serif;
+  font-weight: 800;
+
+}
+.card h1.card-title,
+.card h2.card-title,
+.card h3.card-title,
+.card h4.card-title,
+.card h5.card-title,
+.card h6.card-title {
+  font-family: 'Roboto Slab',serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-section-title{
+  font-family: 'Roboto Slab',serif;
+  font-weight: 600;
+}
+
+blockquote{
+  font-family: 'Roboto Condensed',sans-serif;
+  font-weight: 500;
+
+}
+cite{
+  font-family: 'Roboto Mono',monospace;
+  font-weight: 700;
+}
+.footer-copyright-text{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+.call-to-action-text-secondary{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.button-text{
+  font-family: 'Roboto Slab',serif;
+  font-weight: bold;
+}
+
+/* 2 hero-banner */
+.hero-banner-index{
+  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.49), rgba(69, 90, 100, 0.69)), url("../images/layout-one/black-and-white-city-man-people-1330x500.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 24rem;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  scroll-behavior: smooth;
+  color: #cfd8dc;
+}
+.head-left{
+  float: left;
+  width: 40%;
+}
+.head-right{
+  float: right;
+  width: 60%;
+  text-align: right;
+
+}
+.header-list{
+  text-align: left;
+  float: right;
+}
+.header-main{
+  padding: 2rem 0rem 0rem 0rem;
+}
+.hero-title{
+  font-family: "Roboto Slab",serif;
+  font-weight: 600;
+}
+.hero-caption{
+  text-align: center;
+  padding: 4rem 0rem 0rem 0rem;
+}
+.header-main a:hover{
+  text-decoration: none;
+}
+
+.header-main a{
+  color: #eceff1;
+}
+.header-main a:hover{
+  color: #cfd8dc;
+}
+.header-main a:visited{
+  color: #cfd8dc;
+}
+.logo{
+  font-family: "Roboto Slab",serif;
+  font-weight: 600;
+}
+
+
+@keyframes toBlueGrey {
+  0% {
+    color: #e8eaf6;
+  }
+  60% {
+    color: #c5cae9;
+  }
+  100% {
+    color: #9fa8da;
+  }
+}
+@keyframes toGrey{
+  0% {
+    color: #e3f2fd;
+    font-size: 1.25rem;
+  }
+  60% {
+    color: #bbdefb;
+    font-size: 1.5rem;
+  }
+  100%{
+    color: #90caf9;
+    font-size: 2.25rem;
+  }
+}
+h1.hero-title span.word1{
+    animation-name: toBlueGrey;
+    animation-duration: 18s;
+    animation-fill-mode: forwards;
+
+}
+h1.hero-title span.word2{
+  animation-name: toGrey;
+  animation-duration: 18s;
+  animation-fill-mode: forwards;
+  margin-left: -0.55rem;
+}
+
+
+
+
+/* 3 main */
+.balance-text {
+      text-wrap: balance;  /* Apply (proposed) CSS style */
+}
+
+
+main{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+section{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.section-title{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.bar-image{
+  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.19), rgba(69, 90, 100, 0.99)), url("../images/layout-one/bar-local-cong-ireland-63633.jpg");
+  min-height: 18rem;
+  background-size: cover;
+}
+/* image ccredit: pexels orig file name pexels-photo-38981 under Creative Commons Zero License */
+.eye-image{
+  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.19), rgba(69, 90, 100, 0.99)), url("../images/layout-one/pexels-photo-38981.jpg");
+  min-height: 18rem;
+  background-size: cover;
+}
+.eye-image .card-title{
+  color: #90a4ae;
+  position: absolute;
+  top: 16rem;
+  padding-left: 2rem;
+}
+
+
+.bar-image .card-title{
+  color: #90a4ae;
+  position: absolute;
+  top: 16rem;
+  padding-left: 2rem;
+}
+
+.client-card-one{
+  background-color: #b0bec5;
+}
+.client-card-two{
+  background-color: #607d8b;
+  color: #eceff1;
+}
+
+
+.client-card-three{
+  background-color: #cfd8dc;
+}
+
+.team-oval{
+  padding-right:  1rem;
+  border-radius: 8rem;
+  max-width: 12rem;
+}
+
+.btn-outline-white {
+  color: #b0bec5 !important;
+  background-image: none;
+  background-color: rgba(38, 50, 56, 0.75);
+  border-color: white !important;
+  border-width: 1rem !important;
+}
+.btn-outline-white:hover {
+    color: #263238 !important;
+    background-color: #b0bec5;
+    border-color: white;
+}
+.btn-outline-white:focus, .btn-outline-white.focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.btn-outline-white.disabled, .btn-outline-white:disabled {
+    color: white;
+    background-color: transparent;
+}
+.btn-outline-white:active, .btn-outline-white.active,
+.show > .btn-outline-white.dropdown-toggle {
+    color: #fff;
+    background-color: white;
+    border-color: white;
+}
+
+/* 5 footer */
+footer{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.bizshow-footer{
+  background-color: #263238;
+  padding-top: 2rem;
+  color: #eceff1;
+}
+.footer-col-header{
+  font-family: "Roboto",sans-serif;
+  font-weight: 600;
+}
+.bizshow-footer a{
+  color: #eceff1;
+}
+.bizshow-footer a:hover{
+  text-decoration: none;
+  color: #90a4ae;
+}
+.bizshow-footer a:visited{
+  color: #90a4ae;
+}
+.bizshow-footer i.fa{
+  color: #eceff1;
+
+}
+.bizshow-footer i.fa:hover{
+  color: #90a4ae;
+}
+.bizshow-footer i.fa:visited{
+  color: #90a4ae;
+}
+.my-social i.fa{
+  color: #eceff1;
+}
+.my-social i.fa:hover{
+  color: #90a4ae;
+}
+.my-social i.fa:visited{
+  color: #90a4ae;
+}
