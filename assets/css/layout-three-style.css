@@ -84,7 +84,7 @@ cite{
 
 /* 2 hero-banner */
 .hero-banner-index{
-  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.49), rgba(69, 90, 100, 0.69)), url("../images/layout-one/black-and-white-city-man-people-1330x500.jpg");
+  background-image:   url("../images/layout-three/pexels-photo-443378-1440x753.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -92,7 +92,7 @@ cite{
   perspective: 1px;
   transform-style: preserve-3d;
   scroll-behavior: smooth;
-  color: #cfd8dc;
+  color: #212121;
 }
 .head-left{
   float: left;
@@ -124,13 +124,13 @@ cite{
 }
 
 .header-main a{
-  color: #eceff1;
+  color: #2962ff;
 }
 .header-main a:hover{
-  color: #cfd8dc;
+  color: #82b1ff;
 }
 .header-main a:visited{
-  color: #cfd8dc;
+  color: #82b1ff;
 }
 .logo{
   font-family: "Roboto Slab",serif;
@@ -138,26 +138,26 @@ cite{
 }
 @keyframes toBlueGrey {
   0% {
-    color: #e1f5fe;
+    color: #b0bec5;
   }
   60% {
-    color: #03a9f4;
+    color: #78909c;
   }
   100% {
-    color: #0091ea;
+    color: #455a64;
   }
 }
 @keyframes toGrey{
   0% {
-    color: #e0f7fa;
+    color: #bdbdbd;
     font-size: 1.25rem;
   }
   60% {
-    color: #00bcd4;
+    color: #9e9e9e;
     font-size: 1.5rem;
   }
   100%{
-    color: #00b8d4;
+    color: #757575;
     font-size: 2.25rem;
   }
 }
@@ -180,7 +180,7 @@ h1.hero-title span.word2{
       text-wrap: balance;  /* Apply (proposed) CSS style */
 }
 .paralllax-container-one{
-  background-image: linear-gradient(to bottom, rgba(38, 50, 56, 0.49), rgba(69, 90, 100, 0.69)), url("../images/layout-one/black-and-white-city-man-people-1330x500.jpg");
+  background-image:   url("../images/layout-three/pexels-photo-443378-1440x753.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -188,7 +188,7 @@ h1.hero-title span.word2{
   perspective: 1px;
   transform-style: preserve-3d;
   scroll-behavior: smooth;
-  color: #cfd8dc;
+  color: #3f51b5;
 }
 
 main{
@@ -230,16 +230,16 @@ section{
 }
 
 .client-card-one{
-  background-color: #b0bec5;
+  background-color: #82b1ff;
 }
 .client-card-two{
-  background-color: #607d8b;
-  color: #eceff1;
+  background-color: #e3f2fd;
+  
 }
 
 
 .client-card-three{
-  background-color: #cfd8dc;
+  background-color: #bbdefb;
 }
 
 .team-oval{
@@ -248,30 +248,76 @@ section{
   max-width: 12rem;
 }
 
-.btn-outline-white {
-  color: #b0bec5 !important;
+.btn-medium-rounded{
+   border-radius: 18px;
+}
+
+.btn-two {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+.btn-two:hover {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+.btn-two:focus, .btn-two.focus {
+  color: #fff;
+  background-color: #212121;
+  border-color: #212121;
+}
+.btn-two:active, .btn-two.active, .open > .btn-two.dropdown-toggle {
+  color: #fff;
+  background-color: #424242;
+  border-color: #616161;
   background-image: none;
-  background-color: rgba(38, 50, 56, 0.75);
-  border-color: white !important;
-  border-width: 1rem !important;
 }
-.btn-outline-white:hover {
-    color: #263238 !important;
-    background-color: #b0bec5;
-    border-color: white;
+.btn-two:active:hover, .btn-two:active:focus, .btn-two:active.focus, .btn-two.active:hover, .btn-two.active:focus, .btn-two.active.focus, .open > .btn-two.dropdown-toggle:hover, .open > .btn-two.dropdown-toggle:focus, .open > .btn-two.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #757575;
+  border-color: #9e9e9e;
 }
-.btn-outline-white:focus, .btn-outline-white.focus {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+.btn-two.disabled:focus, .btn-two.disabled.focus, .btn-two:disabled:focus, .btn-two:disabled.focus {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
-.btn-outline-white.disabled, .btn-outline-white:disabled {
-    color: white;
-    background-color: transparent;
+.btn-two.disabled:hover, .btn-two:disabled:hover {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
-.btn-outline-white:active, .btn-outline-white.active,
-.show > .btn-outline-white.dropdown-toggle {
-    color: #fff;
-    background-color: white;
-    border-color: white;
+.btn-outline-two {
+  color: #f5f5f5;
+  background-image: none;
+  background-color: rgba(33, 33, 33, 0.95);
+  border-color: #212121;
+
+}
+.btn-outline-two:hover {
+  color: #212121;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+}
+.btn-outline-two:focus, .btn-outline-two.focus {
+  color: #212121;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+}
+.btn-outline-two:active, .btn-outline-two.active, .open > .btn-outline-two.dropdown-toggle {
+  color: #212121;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+}
+.btn-outline-two:active:hover, .btn-outline-two:active:focus, .btn-outline-two:active.focus, .btn-outline-two.active:hover, .btn-outline-two.active:focus, .btn-outline-two.active.focus, .open > .btn-outline-two.dropdown-toggle:hover, .open > .btn-outline-two.dropdown-toggle:focus, .open > .btn-outline-two.dropdown-toggle.focus {
+  color:  #212121;
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+.btn-outline-two.disabled:focus, .btn-outline-two.disabled.focus, .btn-outline-two:disabled:focus, .btn-outline-two:disabled.focus {
+  border-color: #bdbdbd
+}
+.btn-outline-two.disabled:hover, .btn-outline-two:disabled:hover {
+  border-color: #bdbdbd
 }
 
 /* 5 footer */
